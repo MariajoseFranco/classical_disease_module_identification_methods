@@ -12,10 +12,10 @@ from visualization import VisualizationModule
 
 
 class Main():
-    def __init__(self):
+    def __init__(self, path):
         # Select the diseases to work with
         self.selected_diseases = ["Albinism", "Alcohol Use Disorder"]
-        self.DC = DataCompilation(self.selected_diseases)
+        self.DC = DataCompilation(path, self.selected_diseases)
         self.GPPI = GraphPPI()
         self.V = VisualizationModule()
         self.LCC = LCC()
@@ -163,4 +163,5 @@ class Main():
 
 
 if __name__ == "__main__":
-    Main().main()
+    path = "./data/"
+    Main().main(path)

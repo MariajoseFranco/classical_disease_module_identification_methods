@@ -2,8 +2,8 @@ import pandas as pd
 
 
 class DataCompilation():
-    def __init__(self, selected_diseases) -> None:
-        self.path = '/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/'
+    def __init__(self, path, selected_diseases) -> None:
+        self.path = path
         self.selected_diseases = selected_diseases
 
     def get_data(self):
