@@ -22,9 +22,9 @@ numpy==2.2.4
 packaging==24.2
 pandas==2.2.3
 parso==0.8.4
+patsy==1.0.1
 pcst_fast==1.0.10
 pexpect==4.9.0
-pillow==11.2.0
 platformdirs==4.3.7
 prompt_toolkit==3.0.50
 psutil==7.0.0
@@ -40,7 +40,9 @@ pyzmq==26.3.0
 scipy==1.15.2
 six==1.17.0
 stack-data==0.6.3
+statsmodels==0.14.4
 tornado==6.4.2
+tqdm==4.67.1
 traitlets==5.14.3
 typing_extensions==4.13.0
 tzdata==2025.2
