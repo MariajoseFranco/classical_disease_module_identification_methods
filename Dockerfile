@@ -10,5 +10,7 @@ COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN mkdir -p /app/outputs/imgs
+
 # Run the application
 CMD ["python", "main.py"]

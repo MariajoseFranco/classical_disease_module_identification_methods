@@ -28,7 +28,7 @@ class Main():
         results = {}
 
         for disease, all_seeds in tqdm(disease_gene_map.items()):
-            print(f"\n🔍 Processing: {disease} ({len(all_seeds)} raw seeds)")
+            print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
 
             seeds = [g for g in all_seeds if g in G_ppi]
             if len(seeds) < MIN_SEEDS:
@@ -104,7 +104,7 @@ class Main():
                         "protein_id": gene
                     })
 
-        pd.DataFrame(all_modules).to_csv("multi_disease_modules.csv", index=False)
+        pd.DataFrame(all_modules).to_csv("./outputs/multi_disease_modules.csv", index=False)
         print("Saved all modules to 'multi_disease_modules.csv'")
 
     def visualize_disease_results(
@@ -117,9 +117,10 @@ class Main():
 
         # LCC
         self.V.visualize_module(
+            "lcc",
             G_ppi,
             results[disease]["lcc"],
-            title=f"LCC Module — {disease}",
+            disease,
             seed_nodes=list(disease_gene_map[disease])
         )
         # DIAMOND
@@ -138,16 +139,18 @@ class Main():
         )
         # ROBUST
         self.V.visualize_module(
+            "robust",
             G_ppi,
             results[disease]["robust"],
-            title=f"ROBUST Module — {disease}",
+            disease,
             seed_nodes=list(disease_gene_map[disease])
         )
         # TOPAS
         self.V.visualize_module(
+            "topas",
             G_ppi,
             results[disease]["topas"],
-            title=f"TOPAS Module — {disease}",
+            disease,
             seed_nodes=list(disease_gene_map[disease])
         )
 
@@ -163,5 +166,6 @@ class Main():
 
 
 if __name__ == "__main__":
-    path = "./data/"
-    Main().main(path)
+    # path = "./data/"
+    path = "/app/data/"
+    Main(path).main()

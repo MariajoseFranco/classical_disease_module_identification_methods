@@ -6,7 +6,7 @@ class VisualizationModule():
     def __init__(self):
         pass
 
-    def visualize_module(self, G, node_list, title="Module", seed_nodes=None):
+    def visualize_module(self, method, G, node_list, disease, seed_nodes=None):
         subG = G.subgraph(node_list).copy()
         if len(subG.nodes) == 0:
             print("Nothing to visualize: subgraph is empty.")
@@ -59,9 +59,9 @@ class VisualizationModule():
         handles, labels = plt.gca().get_legend_handles_labels()
         if handles:
             plt.legend()
-        plt.title(title)
+        plt.title(f"{method.upper()} Module - {disease.title()}")
         plt.axis('off')
-        plt.show()
+        plt.savefig(f"./outputs/imgs/{method}_graph_{disease}.png")
 
     def visualize_diamond_module(self, G, diamond_genes, disease_genes, disease):
         # Extract nodes in the final disease module
@@ -110,7 +110,7 @@ class VisualizationModule():
         plt.title(f"DIAMOnD Disease Module for {disease}")
         plt.legend()
         plt.axis("off")
-        plt.show()
+        plt.savefig(f"./outputs/imgs/diamond_graph_{disease}.png")
 
     def visualize_domino_module(self, G, domino_modules, disease_genes, disease):
         filtered_disease_genes = [g for g in disease_genes if g in G.nodes()]
@@ -151,7 +151,7 @@ class VisualizationModule():
             plt.title(f"DOMINO: Module 1 for {disease}")
             plt.legend()
             plt.axis('off')
-            plt.show()
+            plt.savefig(f"./outputs/imgs/domino_graph_{disease}.png")
         except Exception as ex:
             print(f"No DOMINO modules found: {ex}")
 
@@ -172,4 +172,4 @@ class VisualizationModule():
 
         nx.draw(G_seed_sub, with_labels=True, node_color='red', node_size=300)
         plt.title(f"Seed Gene Subgraph for {disease.title()}")
-        plt.show()
+        plt.savefig(f"./outputs/imgs/{disease}_seed_graph.png")
