@@ -166,6 +166,6 @@ class Main():
 
 
 if __name__ == "__main__":
-    # path = "./data/"
-    path = "/app/data/"
+    path = "./data/"
+    # path = "/app/data/"
     Main(path).main()
