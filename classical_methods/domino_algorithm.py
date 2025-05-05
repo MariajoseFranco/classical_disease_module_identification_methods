@@ -8,7 +8,7 @@ class DOMINO():
     def __init__(self) -> None:
         pass
 
-    def domino(self, G, active_genes, min_size=5, fdr_threshold=0.3, bonferroni_threshold=0.05):
+    def run_domino(self, G, active_genes, min_size=5, fdr_threshold=0.3, bonferroni_threshold=0.05):
         """
         DOMINO algorithm implementation for active module identification.
 

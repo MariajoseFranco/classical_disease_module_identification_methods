@@ -24,14 +24,14 @@ class Main():
         self.ROBUST = ROBUST()
         self.TOPAS = TOPAS()
 
-    def run_classical_methods(self, G_ppi, disease_gene_map, MIN_SEEDS=10):
+    def run_classical_methods(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
         results = {}
 
-        for disease, all_seeds in tqdm(disease_gene_map.items()):
+        for disease, all_seeds in tqdm(disease_pro_mapping.items()):
             print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
 
-            seeds = [g for g in all_seeds if g in G_ppi]
-            if len(seeds) < MIN_SEEDS:
+            seed_nodes = [node for node in all_seeds if node in G_ppi]
+            if len(seed_nodes) < MIN_SEEDS:
                 print("Skipped — not enough seeds in PPI")
                 continue
 
@@ -41,7 +41,7 @@ class Main():
                 results[disease]["lcc"] = list(
                     self.LCC.run_lcc(
                         G_ppi,
-                        seeds
+                        seed_nodes
                     ).nodes
                 )
             except Exception as e:
@@ -49,9 +49,9 @@ class Main():
 
             try:
                 results[disease]["topas"] = list(
-                    self.TOPAS.topas_full(
+                    self.TOPAS.run_topas(
                         G_ppi,
-                        seeds,
+                        seed_nodes,
                         max_dist=3,
                         top_percent=0.3
                     )
@@ -63,7 +63,7 @@ class Main():
                 results[disease]["diamond"] = list(
                     self.DIAMOND.run_diamond(
                         G_ppi,
-                        seeds,
+                        seed_nodes,
                         num_iterations=100
                     )
                 )
@@ -72,9 +72,9 @@ class Main():
 
             try:
                 results[disease]["domino"] = list(
-                    self.DOMINO.domino(
+                    self.DOMINO.run_domino(
                         G_ppi,
-                        seeds
+                        seed_nodes
                     )
                 )
             except Exception as e:
@@ -84,7 +84,7 @@ class Main():
                 results[disease]["robust"] = list(
                     self.ROBUST.run_robust_fallback(
                         G_ppi,
-                        seeds,
+                        seed_nodes,
                         n_trees=30
                     )
                 )
@@ -108,11 +108,11 @@ class Main():
         print("Saved all modules to 'multi_disease_modules.csv'")
 
     def visualize_disease_results(
-            self, disease, G_ppi, disease_gene_map, results
+            self, disease, G_ppi, disease_pro_mapping, results
     ):
         # Seed Gene Subgraph
         self.V.visualize_seed_gene_subgraph(
-            disease, G_ppi, disease_gene_map
+            disease, G_ppi, disease_pro_mapping
         )
 
         # LCC
@@ -121,20 +121,20 @@ class Main():
             G_ppi,
             results[disease]["lcc"],
             disease,
-            seed_nodes=list(disease_gene_map[disease])
+            seed_nodes=list(disease_pro_mapping[disease])
         )
         # DIAMOND
         self.V.visualize_diamond_module(
             G_ppi,
             results[disease]["diamond"],
-            disease_gene_map[disease],
+            disease_pro_mapping[disease],
             disease
         )
         # DOMINO
         self.V.visualize_domino_module(
             G_ppi,
             results[disease]["domino"],
-            disease_gene_map[disease],
+            disease_pro_mapping[disease],
             disease
         )
         # ROBUST
@@ -143,7 +143,7 @@ class Main():
             G_ppi,
             results[disease]["robust"],
             disease,
-            seed_nodes=list(disease_gene_map[disease])
+            seed_nodes=list(disease_pro_mapping[disease])
         )
         # TOPAS
         self.V.visualize_module(
@@ -151,17 +151,17 @@ class Main():
             G_ppi,
             results[disease]["topas"],
             disease,
-            seed_nodes=list(disease_gene_map[disease])
+            seed_nodes=list(disease_pro_mapping[disease])
         )
 
     def main(self):
         df_pro_pro, df_gen_pro, df_dis_gen, df_dis_pro = self.DC.main()
-        G_ppi, disease_gene_map = self.GPPI.main(df_pro_pro, df_dis_pro)
-        results_classical_methods = self.run_classical_methods(G_ppi, disease_gene_map)
+        G_ppi, disease_pro_mapping = self.GPPI.main(df_pro_pro, df_dis_pro)
+        results_classical_methods = self.run_classical_methods(G_ppi, disease_pro_mapping)
         self.save_classical_methods_results(results_classical_methods)
         for disease in self.selected_diseases:
             self.visualize_disease_results(
-                disease, G_ppi, disease_gene_map, results_classical_methods
+                disease, G_ppi, disease_pro_mapping, results_classical_methods
             )
 
 
