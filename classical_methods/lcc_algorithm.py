@@ -1,12 +1,24 @@
 import networkx as nx
+from networkx import Graph
 
 
 class LCC():
     def __init__(self) -> None:
         pass
 
-    def run_lcc(self, G, disease_genes):
-        subgraph = G.subgraph([g for g in disease_genes if g in G.nodes()])
+    def run_lcc(self, G: Graph, seed_nodes: list) -> Graph:
+        """
+        Run the LCC method
+
+        Args:
+            G: the graph with the protein-protein interaction
+            seed_nodes: the seed nodes of the disease of interest
+
+        Returns:
+            Graph: subgraph containing only the nodes that are
+            present in the largest_cc
+        """
+        subgraph = G.subgraph([node for node in seed_nodes if node in G.nodes()])
         components = list(nx.connected_components(subgraph))
         if not components:
             return nx.Graph()
