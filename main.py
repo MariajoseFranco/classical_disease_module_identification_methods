@@ -49,11 +49,11 @@ class Main():
 
             try:
                 results[disease]["topas"] = list(
-                    self.TOPAS.topas_with_top_percent_rwr(
+                    self.TOPAS.topas_full(
                         G_ppi,
                         seeds,
                         max_dist=3,
-                        top_percent=0.05
+                        top_percent=0.3
                     )
                 )
             except Exception as e:
