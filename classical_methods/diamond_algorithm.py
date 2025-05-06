@@ -169,7 +169,6 @@ class DIAMOND:
         Returns:
             list: results obtained
         """
-        G = G.copy()
         seed_nodes = set(seed_nodes)
         N = G.number_of_nodes()
         neighbors, degrees = self.get_neighbors_and_degrees(G)

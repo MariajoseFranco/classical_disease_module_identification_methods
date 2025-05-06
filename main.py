@@ -21,7 +21,7 @@ class Main():
         self.LCC = LCC()
         self.DIAMOND = DIAMOND()
         self.DOMINO = DOMINO()
-        self.ROBUST = ROBUST()
+        self.ROBUST = ROBUST() 
         self.TOPAS = TOPAS()
 
     def run_classical_methods(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
@@ -31,6 +31,9 @@ class Main():
             print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
 
             seed_nodes = [node for node in all_seeds if node in G_ppi]
+            with open('seeds.txt', 'w') as f:
+                for item in seed_nodes:
+                    f.write(f"{item}\n")
             if len(seed_nodes) < MIN_SEEDS:
                 print("Skipped — not enough seeds in PPI")
                 continue
@@ -39,7 +42,7 @@ class Main():
 
             try:
                 results[disease]["lcc"] = list(
-                    self.LCC.run_lcc(
+                    self.LCC.run_lcc_per_disease(
                         G_ppi,
                         seed_nodes
                     ).nodes
@@ -82,10 +85,9 @@ class Main():
 
             try:
                 results[disease]["robust"] = list(
-                    self.ROBUST.run_robust_fallback(
+                    self.ROBUST.run_robust(
                         G_ppi,
-                        seed_nodes,
-                        n_trees=30
+                        seed_nodes
                     )
                 )
             except Exception as e:

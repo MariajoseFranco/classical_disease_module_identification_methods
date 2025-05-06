@@ -84,10 +84,8 @@ class TOPAS:
         Returns:
             _type_: _description_
         """
-        G = G.copy()
-
         # Step 1: LCC extraction
-        G_lcc = self.lcc.run_lcc(G, seed_nodes)
+        G_lcc = self.lcc.run_lcc_per_disease(G, seed_nodes)
         seed_nodes_lcc = list(G_lcc.nodes)
 
         # Step 2: Connector discovery

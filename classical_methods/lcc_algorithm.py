@@ -6,7 +6,7 @@ class LCC():
     def __init__(self) -> None:
         pass
 
-    def run_lcc(self, G: Graph, seed_nodes: list) -> Graph:
+    def run_lcc_per_disease(self, G: Graph, seed_nodes: list) -> Graph:
         """
         Run the LCC method
 
@@ -23,4 +23,10 @@ class LCC():
         if not components:
             return nx.Graph()
         largest_cc = max(components, key=len)
+        return G.subgraph(largest_cc).copy()
+
+    def run_lcc(self, G: nx.Graph) -> nx.Graph:
+        if len(G) == 0:
+            return G
+        largest_cc = max(nx.connected_components(G), key=len)
         return G.subgraph(largest_cc).copy()
