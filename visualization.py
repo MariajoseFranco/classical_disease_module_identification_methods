@@ -62,6 +62,7 @@ class VisualizationModule():
         plt.title(f"{method.upper()} Module - {disease.title()}")
         plt.axis('off')
         plt.savefig(f"./outputs/imgs/{method}_graph_{disease}.png")
+        plt.show()
 
     def visualize_diamond_module(self, G, diamond_genes, disease_genes, disease):
         """
@@ -156,6 +157,7 @@ class VisualizationModule():
             plt.legend()
             plt.axis('off')
             plt.savefig(f"./outputs/imgs/domino_graph_{disease}.png")
+            plt.show()
         except Exception as ex:
             print(f"No DOMINO modules found: {ex}")
 
@@ -174,6 +176,15 @@ class VisualizationModule():
             "edges"
         )
 
-        nx.draw(G_seed_sub, with_labels=True, node_color='red', node_size=300)
-        plt.title(f"Seed Gene Subgraph for {disease.title()}")
+        # Create a figure and axes explicitly
+        fig, ax = plt.subplots(figsize=(10, 8))
+
+        # Draw using the given axes
+        pos = nx.spring_layout(G_seed_sub)
+        nx.draw(G_seed_sub, pos, ax=ax, with_labels=True, node_color='red', node_size=300)
+
+        ax.set_title(f"Seed Gene Subgraph for {disease.title()}")
+        fig.tight_layout()
+
         plt.savefig(f"./outputs/imgs/{disease}_seed_graph.png")
+        plt.show()

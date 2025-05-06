@@ -31,9 +31,6 @@ class Main():
             print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
 
             seed_nodes = [node for node in all_seeds if node in G_ppi]
-            with open('seeds.txt', 'w') as f:
-                for item in seed_nodes:
-                    f.write(f"{item}\n")
             if len(seed_nodes) < MIN_SEEDS:
                 print("Skipped — not enough seeds in PPI")
                 continue
