@@ -5,7 +5,7 @@ from classical_methods.diamond_algorithm import DIAMOND
 from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
-from classical_methods.topas_algorithm import TOPAS
+from classical_methods.topas_algorithm_new import TOPAS
 from data_compilation import DataCompilation
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
@@ -22,7 +22,7 @@ class Main():
         self.DIAMOND = DIAMOND()
         self.DOMINO = DOMINO()
         self.ROBUST = ROBUST()
-        self.TOPAS = TOPAS()
+        self.TOPAS = TOPAS(expansion_steps=2, cores=4)
 
     def run_classical_methods(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
         results = {}
@@ -49,11 +49,11 @@ class Main():
 
             try:
                 results[disease]["topas"] = list(
-                    self.TOPAS.run_topas(
-                        G_ppi,
-                        seed_nodes,
-                        max_dist=3,
-                        top_percent=0.3
+                    self.TOPAS.run(
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
                     )
                 )
             except Exception as e:
@@ -62,8 +62,10 @@ class Main():
             try:
                 results[disease]["diamond"] = list(
                     self.DIAMOND.run_diamond(
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
                         200
                     )
                 )
