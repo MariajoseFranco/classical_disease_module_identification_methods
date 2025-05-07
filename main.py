@@ -10,8 +10,6 @@ from data_compilation import DataCompilation
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
 
-# pueba
-
 
 class Main():
     def __init__(self, path):
@@ -23,7 +21,7 @@ class Main():
         self.LCC = LCC()
         self.DIAMOND = DIAMOND()
         self.DOMINO = DOMINO()
-        self.ROBUST = ROBUST() 
+        self.ROBUST = ROBUST()
         self.TOPAS = TOPAS()
 
     def run_classical_methods(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
