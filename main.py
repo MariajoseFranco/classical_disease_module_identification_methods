@@ -1,14 +1,12 @@
 import pandas as pd
 from tqdm import tqdm
 
-import GNN
 from classical_methods.diamond_algorithm import DIAMOND
 from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
 from classical_methods.topas_algorithm import TOPAS
 from data_compilation import DataCompilation
-from GNN import GCN
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
 
@@ -163,9 +161,6 @@ class Main():
             if len(seed_nodes) < MIN_SEEDS:
                 print("Skipped — not enough seeds in PPI")
                 continue
-        data = GNN.create_pyg_data(G_ppi, seed_nodes)
-        model = GCN(in_channels=data.num_features, hidden_channels=16, out_channels=2)
-        GNN.train(model, data)
 
     def main(self):
         # Classical Methods
@@ -177,8 +172,6 @@ class Main():
             self.visualize_disease_results(
                 disease, G_ppi, disease_pro_mapping, results_classical_methods
             )
-        # GNN
-        # self.run_gnn(G_ppi, disease_pro_mapping)
 
 
 if __name__ == "__main__":
