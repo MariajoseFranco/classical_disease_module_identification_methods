@@ -1,107 +1,113 @@
+from functools import partial
+from multiprocessing import Pool, cpu_count
+
 import networkx as nx
 import numpy as np
-from networkx import Graph
+import pandas as pd
 
 from classical_methods.lcc_algorithm import LCC
 
 
-class TOPAS:
-    def __init__(self) -> None:
+class TOPAS():
+    def __init__(self, expansion_steps=2, cores=None):
+        self.expansion_steps = expansion_steps
+        self.cores = cores if cores is not None else cpu_count()
         self.lcc = LCC()
 
-    def random_walk_with_restart(self, G, seeds, restart_prob=0.75, max_iter=100, tol=1e-6):
-        nodes = list(G.nodes())
-        idx_map = {node: i for i, node in enumerate(nodes)}
-        n = len(nodes)
-
-        A = nx.to_numpy_array(G, nodelist=nodes)
-        A = A / A.sum(axis=1, keepdims=True)
-
-        p0 = np.zeros(n)
-        for seed in seeds:
-            if seed in idx_map:
-                p0[idx_map[seed]] = 1.0
-        p0 /= p0.sum()
-
-        pt = p0.copy()
-        for _ in range(max_iter):
-            pt_next = (1 - restart_prob) * A @ pt + restart_prob * p0
-            if np.linalg.norm(pt_next - pt, 1) < tol:
-                break
-            pt = pt_next
-
-        return dict(zip(nodes, pt))
-
-    def find_potential_connectors(self, G: Graph, seed_nodes: list, max_dist: int = 3) -> list:
-        """_summary_
-
-        Args:
-            G: the graph with the protein-protein interaction
-            seed_nodes: the seed nodes of the disease of interest
-            max_dist: how far to search from the disease-related seed nodes. Defaults to 3.
-
-        Returns:
-            list: list of the connectors that are not present in the seed nodes
-        """
-        connectors = set()
-        for i, s1 in enumerate(seed_nodes):
-            for s2 in seed_nodes[i+1:]:
-                try:
-                    path = nx.shortest_path(G, s1, s2)
-                    if 2 <= len(path) - 1 <= max_dist:
-                        connectors.update(set(path[1:-1]))
-                except nx.NetworkXNoPath:
-                    continue
-        return list(connectors - set(seed_nodes))
-
-    def prune_module(self, G, seeds, rwr_scores):
-        non_seeds = [n for n in G.nodes() if n not in seeds]
-        sorted_by_score = sorted(non_seeds, key=lambda x: rwr_scores.get(x, 0))
-
-        for node in sorted_by_score:
-            if node not in G:
+    def sp_compute(self, source_v, dist_matrix, seeds, graph, expansion_steps):
+        d = dist_matrix.get(source_v, {})
+        dest_v = [v for v, dist in d.items() if 1 < dist <= expansion_steps + 1 and v in seeds]
+        paths = []
+        for v in dest_v:
+            try:
+                path = nx.shortest_path(graph, source=source_v, target=v)
+                paths.extend(path[1:-1])
+            except nx.NetworkXNoPath:
                 continue
-            G_tmp = G.copy()
-            G_tmp.remove_node(node)
-            components = list(nx.connected_components(G_tmp))
-            best_cc = max(components, key=lambda comp: len(set(comp) & set(seeds)))
-            if len(set(seeds) & best_cc) == len(seeds):
-                G = G_tmp.subgraph(best_cc).copy()
-        return G
+        return paths
 
-    def run_topas(
-            self, G: Graph, seed_nodes: list, max_dist: int = 3, top_percent: float = 0.3
-    ) -> Graph:
-        """
-        Run the TOPAS method
+    def _compute_connectors(self, G_lcc, seeds):
+        dist_matrix = dict(
+            nx.all_pairs_shortest_path_length(G_lcc, cutoff=self.expansion_steps + 1)
+        )
 
-        Args:
-            G: the graph with the protein-protein interaction
-            seed_nodes: the seed nodes of the disease of interest
-            max_dist: how far to search from the disease-related seed nodes
-            top_percent: how many of the nodes found should be retained for the final module
+        with Pool(processes=self.cores) as pool:
+            func = partial(
+                self.sp_compute,
+                dist_matrix=dist_matrix,
+                seeds=seeds,
+                graph=G_lcc,
+                expansion_steps=self.expansion_steps
+            )
+            connector_lists = pool.map(func, seeds)
 
-        Returns:
-            _type_: _description_
-        """
-        # Step 1: LCC extraction
-        G_lcc = self.lcc.run_lcc_per_disease(G, seed_nodes)
-        seed_nodes_lcc = list(G_lcc.nodes)
+        connectors = set()
+        for conn in connector_lists:
+            connectors.update(conn)
+        return connectors
 
-        # Step 2: Connector discovery
-        connectors = self.find_potential_connectors(G, seed_nodes_lcc, max_dist)  # G o G_lcc?
-        if not connectors:
-            return G_lcc.subgraph(seed_nodes_lcc).copy()
+    def _random_walk_prune(self, subgraph, seeds):
+        A = nx.to_numpy_array(subgraph)
+        M = A / A.sum(axis=1, keepdims=True)
+        M = np.nan_to_num(M)
 
-        # Step 3: RWR scoring
-        rwr_scores = self.random_walk_with_restart(G_lcc, seed_nodes_lcc)
-        ranked_connectors = sorted(connectors, key=lambda x: -rwr_scores.get(x, 0))
-        n_top = max(1, int(top_percent * len(ranked_connectors)))
-        top_connectors = ranked_connectors[:n_top]
+        r = np.array([1.0 if node in seeds else 0.0 for node in subgraph.nodes])
+        r = r / r.sum()
 
-        # Step 4: Build and prune module
-        module_nodes = set(seed_nodes_lcc) | set(top_connectors)
-        G_module = G_lcc.subgraph(module_nodes).copy()
-        G_pruned = self.prune_module(G_module, seed_nodes_lcc, rwr_scores)
+        p = r.copy()
+        for _ in range(100):
+            p = (1 - 0.75) * np.matmul(M.T, p) + 0.75 * r
 
-        return G_pruned
+        df = pd.DataFrame({
+            "node": list(subgraph.nodes),
+            "val": [1 if node in seeds else 0 for node in subgraph.nodes],
+            "prob": p
+        }).sort_values("prob")
+
+        for _, row in df[df["val"] == 0].iterrows():
+            v = row["node"]
+            if v not in subgraph:
+                continue
+            temp_subgraph = subgraph.copy()
+            temp_subgraph.remove_node(v)
+            if nx.number_connected_components(temp_subgraph) > 1:
+                lcc_temp = self.lcc.run_lcc(temp_subgraph)
+                if len(seeds & set(lcc_temp.nodes)) == len(seeds):
+                    subgraph = lcc_temp
+            else:
+                subgraph = temp_subgraph
+
+        return subgraph
+
+    def read(self, network_file, seeds_file):
+        network_df = pd.read_csv(network_file, sep="\t", header=None)
+        seeds = pd.read_csv(seeds_file, sep="\t", header=None).iloc[:, 0].values
+        return network_df, seeds
+
+    def run(self, network_file, seeds_file):
+        network_df, seeds = self.read(network_file, seeds_file)
+        if network_df is None or network_df.shape[1] < 2:
+            raise ValueError("Network file is missing.")
+        if seeds is None or len(seeds) == 0:
+            raise ValueError("Seeds are missing.")
+
+        G = nx.Graph()
+        G.add_edges_from(network_df.iloc[:, :2].values)
+        seeds = set(map(str, seeds))
+
+        G_lcc = self.lcc.run_lcc(G)
+        seeds = seeds & set(G_lcc.nodes)
+        connectors = self._compute_connectors(G_lcc, seeds)
+
+        sub_nodes = seeds.union(connectors)
+        subgraph = G_lcc.subgraph(sub_nodes).copy()
+
+        if subgraph.number_of_edges() == 0:
+            print("No module found!")
+            return None
+
+        subgraph = self.lcc.run_lcc(subgraph)
+        seeds = seeds & set(subgraph.nodes)
+        pruned_graph = self._random_walk_prune(subgraph, seeds)
+
+        return nx.to_pandas_edgelist(pruned_graph)

@@ -5,7 +5,7 @@ from classical_methods.diamond_algorithm import DIAMOND
 from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
-from classical_methods.topas_algorithm_new import TOPAS
+from classical_methods.topas_algorithm import TOPAS
 from data_compilation import DataCompilation
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
