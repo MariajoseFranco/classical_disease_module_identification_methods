@@ -5,8 +5,6 @@ import numpy as np
 from networkx import Graph
 from scipy.special import gammaln
 
-# from scipy.stats import hypergeom
-
 
 class DIAMOND:
     def __init__(self, alpha=1):

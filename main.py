@@ -1,7 +1,7 @@
 import pandas as pd
 from tqdm import tqdm
 
-from classical_methods.diamond_algorithm import DIAMOND
+from classical_methods.diamond_algorithm_new import DIAMOND
 from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
@@ -62,9 +62,9 @@ class Main():
             try:
                 results[disease]["diamond"] = list(
                     self.DIAMOND.run_diamond(
-                        G_ppi,
-                        seed_nodes,
-                        num_iterations=100
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                        200
                     )
                 )
             except Exception as e:
