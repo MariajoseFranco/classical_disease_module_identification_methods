@@ -1,7 +1,7 @@
 import pandas as pd
 from tqdm import tqdm
 
-from classical_methods.diamond_algorithm_new import DIAMOND
+from classical_methods.diamond_algorithm import DIAMOND
 from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
