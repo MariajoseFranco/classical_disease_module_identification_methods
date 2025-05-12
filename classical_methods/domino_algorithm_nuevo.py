@@ -7,8 +7,8 @@ import networkx as nx
 import pandas as pd
 
 # Absolute path to the folder containing the module
-sys.path.append(os.path.abspath('/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos'))
-from DOMINO.src.core.domino import main as domino_main
+sys.path.append(os.path.abspath('/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DOMINO'))
+from src.core.domino import main as domino_main
 
 
 class DOMINO:
@@ -28,15 +28,10 @@ class DOMINO:
                 seeds_file.write(f"{node}\n")
             seeds_path = seeds_file.name
 
-        # Prepare CLI-style arguments and run main
-        sys.argv = [
-            "runner.py",
-            "-a", seeds_path,
-            "-n", ppi_path,
-        ]
-        domino_main()
+        # Call domino_main with paths
+        domino_main(seeds_path, ppi_path)
 
-        # Clean up temporary files
+        # Clean up
         os.remove(ppi_path)
         os.remove(seeds_path)
 
