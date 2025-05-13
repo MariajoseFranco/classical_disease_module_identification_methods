@@ -30,6 +30,10 @@ class Main():
         for disease, all_seeds in tqdm(disease_pro_mapping.items()):
             print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
 
+            with open(f'./src/inputs/seed_nodes_{disease}.txt', 'w') as f:
+                for seed in all_seeds:
+                    f.write(f"{seed}\n")
+
             seed_nodes = [node for node in all_seeds if node in G_ppi]
             if len(seed_nodes) < MIN_SEEDS:
                 print("Skipped — not enough seeds in PPI")
@@ -38,64 +42,71 @@ class Main():
             results[disease] = {}
 
             try:
+                print("\nRunning LCC...")
                 results[disease]["lcc"] = self.LCC.run_lcc_per_disease(
                     G_ppi,
                     seed_nodes
                 )
+                print("...done")
             except Exception as e:
                 print("LCC failed:", e)
 
             try:
-                results[disease]["topas"] = list(
-                    self.TOPAS.run(
-                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
-                    )
+                print("\nRunning TOPAS...")
+                results[disease]["topas"] = self.TOPAS.run(
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt"
                 )
+                print("...done")
             except Exception as e:
                 print("TOPAS failed:", e)
 
             try:
+                print("\nRunning DIAMOND...")
                 results[disease]["diamond"] = self.DIAMOND.run_diamond(
-                    "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                    "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt",
                     200
                 )
+                print("...done")
             except Exception as e:
                 print("DIAMOnD failed:", e)
 
             try:
+                print("\nRunning DOMINO...")
                 results[disease]["domino"] = self.DOMINO.run_domino(
-                    "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                    "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt"
                 )
+                print("...done")
             except Exception as e:
                 print("DOMINO failed:", e)
 
-            try:
-                results[disease]["robust"] = list(
-                    self.ROBUST.run_robust(
-                        G_ppi,
-                        seed_nodes
-                    )
-                )
-            except Exception as e:
-                print("ROBUST failed:", e)
+            # try:
+            #     print("\nRunning ROBUST...")
+            #     results[disease]["robust"] = self.ROBUST.run_robust(
+            #         G_ppi,
+            #         seed_nodes
+            #     )
+            #     print("...done")
+            # except Exception as e:
+            #     print("ROBUST failed:", e)
         return results
 
     def save_classical_methods_results(self, results):
         all_modules = []
 
         for disease, methods in results.items():
-            for method, gene_list in methods.items():
-                for gene in gene_list:
+            for method, module_dict in methods.items():
+                for module, genes in module_dict.items():
                     all_modules.append({
                         "disease": disease,
                         "method": method,
-                        "protein_id": gene
+                        "module": module,
+                        "nodes": genes
                     })
 
-        pd.DataFrame(all_modules).to_csv("./outputs/multi_disease_modules.csv", index=False)
+        pd.DataFrame(all_modules).to_csv("./src/outputs/multi_disease_modules.csv", index=False)
         print("Saved all modules to 'multi_disease_modules.csv'")
 
     def visualize_disease_results(
@@ -106,48 +117,16 @@ class Main():
             disease, G_ppi, disease_pro_mapping
         )
 
-        # LCC
-        self.V.visualize_module(
-            "lcc",
-            G_ppi,
-            results[disease]["lcc"],
-            disease,
-            seed_nodes=list(disease_pro_mapping[disease])
-        )
-        # DIAMOND
-        self.V.visualize_diamond_module(
-            G_ppi,
-            results[disease]["diamond"],
-            disease_pro_mapping[disease],
-            disease
-        )
-        # DOMINO
-        self.V.visualize_domino_module(
-            G_ppi,
-            results[disease]["domino"],
-            disease_pro_mapping[disease],
-            disease
-        )
-        # ROBUST
-        self.V.visualize_module(
-            "robust",
-            G_ppi,
-            results[disease]["robust"],
-            disease,
-            seed_nodes=list(disease_pro_mapping[disease])
-        )
-        # TOPAS
-        self.V.visualize_module(
-            "topas",
-            G_ppi,
-            results[disease]["topas"],
-            disease,
-            seed_nodes=list(disease_pro_mapping[disease])
-        )
+        # Methods
+        self.V.visualize_modules(results[disease]["lcc"], G_ppi, disease, "lcc")
+        self.V.visualize_modules(results[disease]["diamond"], G_ppi, disease, "diamond")
+        self.V.visualize_modules(results[disease]["domino"], G_ppi, disease, "domino")
+        self.V.visualize_modules(results[disease]["topas"], G_ppi, disease, "topas")
 
     def main(self):
         # Classical Methods
         df_pro_pro, df_gen_pro, df_dis_gen, df_dis_pro = self.DC.main()
+        df_pro_pro.to_csv("./src/inputs/PPI.txt", sep="\t", index=False)
         G_ppi, disease_pro_mapping = self.GPPI.main(df_pro_pro, df_dis_pro)
         results_classical_methods = self.run_classical_methods(G_ppi, disease_pro_mapping)
         self.save_classical_methods_results(results_classical_methods)

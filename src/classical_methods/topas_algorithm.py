@@ -90,6 +90,9 @@ class TOPAS():
             raise ValueError("Network file is missing.")
         if seeds is None or len(seeds) == 0:
             raise ValueError("Seeds are missing.")
+        result = {
+            'seed_nodes': list(seeds)
+        }
 
         G = nx.Graph()
         G.add_edges_from(network_df.iloc[:, :2].values)
@@ -110,4 +113,12 @@ class TOPAS():
         seeds = seeds & set(subgraph.nodes)
         pruned_graph = self._random_walk_prune(subgraph, seeds)
 
-        return nx.to_pandas_edgelist(pruned_graph)
+        res = nx.to_pandas_edgelist(pruned_graph)
+        sources = res['source']
+        targets = res['target']
+        all_nodes = pd.concat([sources, targets])
+        unique_nodes = all_nodes.unique()
+
+        result['seed_nodes_module_1'] = list(unique_nodes)
+
+        return result
