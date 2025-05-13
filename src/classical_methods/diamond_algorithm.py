@@ -12,9 +12,14 @@ class DIAMOND:
         self.alpha = alpha
 
     def run_diamond(self, ppi, seed_nodes, n):
-        added_nodes = run_diamond_from_args([
+        seed_genes, added_nodes = run_diamond_from_args([
             ppi,
             seed_nodes,
             str(n)
         ])
-        return added_nodes
+        added_genes = set([gene[0] for gene in added_nodes])
+        result = {
+            'seed_nodes': list(seed_genes)
+        }
+        result['seed_nodes_module_1'] = list(added_genes)
+        return result

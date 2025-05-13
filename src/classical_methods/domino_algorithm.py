@@ -87,4 +87,9 @@ class DOMINO:
 
         # Run the DOMINO pipeline
         G_final_modules = self._run_domino_pipeline(G, seed_nodes)
-        return G_final_modules
+        result = {
+            'seed_nodes': list(seed_nodes)
+        }
+        for i, graph in enumerate(G_final_modules):
+            result[f'seed_nodes_module_{i+1}'] = list(graph.nodes)
+        return result

@@ -23,7 +23,13 @@ class LCC():
         if not components:
             return nx.Graph()
         largest_cc = max(components, key=len)
-        return G.subgraph(largest_cc).copy()
+        subgraph = G.subgraph(largest_cc).copy()
+        nodes = subgraph.nodes
+        result = {
+            'seed_nodes': list(seed_nodes)
+        }
+        result['seed_nodes_module_1'] = list(nodes)
+        return result
 
     def run_lcc(self, G: nx.Graph) -> nx.Graph:
         if len(G) == 0:

@@ -38,11 +38,9 @@ class Main():
             results[disease] = {}
 
             try:
-                results[disease]["lcc"] = list(
-                    self.LCC.run_lcc_per_disease(
-                        G_ppi,
-                        seed_nodes
-                    ).nodes
+                results[disease]["lcc"] = self.LCC.run_lcc_per_disease(
+                    G_ppi,
+                    seed_nodes
                 )
             except Exception as e:
                 print("LCC failed:", e)
@@ -58,35 +56,31 @@ class Main():
                 print("TOPAS failed:", e)
 
             try:
-                results[disease]["diamond"] = list(
-                    self.DIAMOND.run_diamond(
-                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
-                        200
-                    )
+                results[disease]["diamond"] = self.DIAMOND.run_diamond(
+                    "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                    "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                    200
                 )
             except Exception as e:
                 print("DIAMOnD failed:", e)
 
             try:
-                results[disease]["domino"] = list(
-                    self.DOMINO.run_domino(
-                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
-                    )
+                results[disease]["domino"] = self.DOMINO.run_domino(
+                    "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                    "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
                 )
             except Exception as e:
                 print("DOMINO failed:", e)
 
-            # try:
-            #     results[disease]["robust"] = list(
-            #         self.ROBUST.run_robust(
-            #             G_ppi,
-            #             seed_nodes
-            #         )
-            #     )
-            # except Exception as e:
-            #     print("ROBUST failed:", e)
+            try:
+                results[disease]["robust"] = list(
+                    self.ROBUST.run_robust(
+                        G_ppi,
+                        seed_nodes
+                    )
+                )
+            except Exception as e:
+                print("ROBUST failed:", e)
         return results
 
     def save_classical_methods_results(self, results):
