@@ -2,7 +2,7 @@ import pandas as pd
 from tqdm import tqdm
 
 from classical_methods.diamond_algorithm import DIAMOND
-from classical_methods.domino_algorithm_nuevo import DOMINO
+from classical_methods.domino_algorithm import DOMINO
 from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_algorithm import ROBUST
 from classical_methods.topas_algorithm import TOPAS
@@ -37,40 +37,40 @@ class Main():
 
             results[disease] = {}
 
-            # try:
-            #     results[disease]["lcc"] = list(
-            #         self.LCC.run_lcc_per_disease(
-            #             G_ppi,
-            #             seed_nodes
-            #         ).nodes
-            #     )
-            # except Exception as e:
-            #     print("LCC failed:", e)
+            try:
+                results[disease]["lcc"] = list(
+                    self.LCC.run_lcc_per_disease(
+                        G_ppi,
+                        seed_nodes
+                    ).nodes
+                )
+            except Exception as e:
+                print("LCC failed:", e)
 
-            # try:
-            #     results[disease]["topas"] = list(
-            #         self.TOPAS.run(
-            #             "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-            #             "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-            #             "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-            #             "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
-            #         )
-            #     )
-            # except Exception as e:
-            #     print("TOPAS failed:", e)
+            try:
+                results[disease]["topas"] = list(
+                    self.TOPAS.run(
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
+                    )
+                )
+            except Exception as e:
+                print("TOPAS failed:", e)
 
-            # try:
-            #     results[disease]["diamond"] = list(
-            #         self.DIAMOND.run_diamond(
-            #             "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-            #             "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-            #             "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-            #             "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
-            #             200
-            #         )
-            #     )
-            # except Exception as e:
-            #     print("DIAMOnD failed:", e)
+            try:
+                results[disease]["diamond"] = list(
+                    self.DIAMOND.run_diamond(
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
+                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                        200
+                    )
+                )
+            except Exception as e:
+                print("DIAMOnD failed:", e)
 
             try:
                 results[disease]["domino"] = list(
