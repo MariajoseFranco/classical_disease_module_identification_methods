@@ -50,10 +50,8 @@ class Main():
             try:
                 results[disease]["topas"] = list(
                     self.TOPAS.run(
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
+                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
                     )
                 )
             except Exception as e:
@@ -62,10 +60,8 @@ class Main():
             try:
                 results[disease]["diamond"] = list(
                     self.DIAMOND.run_diamond(
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
+                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt",
                         200
                     )
                 )
@@ -75,10 +71,8 @@ class Main():
             try:
                 results[disease]["domino"] = list(
                     self.DOMINO.run_domino(
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/PPI.txt",
-                        "/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/"
-                        "state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
+                        "./state_of_art_repos/DIAMOnD/albinism/PPI.txt",
+                        "./state_of_art_repos/DIAMOnD/albinism/albinism_seeds.txt"
                     )
                 )
             except Exception as e:
@@ -170,6 +164,6 @@ class Main():
 
 
 if __name__ == "__main__":
-    path = "./data/"
+    path = "./src/data/"
     # path = "/app/data/"
     Main(path).main()

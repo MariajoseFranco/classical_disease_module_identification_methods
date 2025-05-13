@@ -7,7 +7,7 @@ import networkx as nx
 import pandas as pd
 
 # Absolute path to the folder containing the module
-sys.path.append(os.path.abspath('/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos/DOMINO'))
+sys.path.append(os.path.abspath('./state_of_art_repos/DOMINO'))
 from src.runner import main_domino, main_slicer
 
 # from src.core.domino import main as main_domino

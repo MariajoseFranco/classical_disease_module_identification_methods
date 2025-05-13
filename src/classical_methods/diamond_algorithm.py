@@ -2,7 +2,7 @@ import os
 import sys
 
 # Absolute path to the folder containing the module
-sys.path.append(os.path.abspath('/Users/mariajosefranco/Desktop/Data Science - UPM/TFM/project/state_of_art_repos'))
+sys.path.append(os.path.abspath('./state_of_art_repos'))
 
 from DIAMOnD.DIAMOnD import run_diamond_from_args
 
