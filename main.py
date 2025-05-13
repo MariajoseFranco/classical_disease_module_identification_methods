@@ -37,15 +37,15 @@ class Main():
 
             results[disease] = {}
 
-            try:
-                results[disease]["lcc"] = list(
-                    self.LCC.run_lcc_per_disease(
-                        G_ppi,
-                        seed_nodes
-                    ).nodes
-                )
-            except Exception as e:
-                print("LCC failed:", e)
+            # try:
+            #     results[disease]["lcc"] = list(
+            #         self.LCC.run_lcc_per_disease(
+            #             G_ppi,
+            #             seed_nodes
+            #         ).nodes
+            #     )
+            # except Exception as e:
+            #     print("LCC failed:", e)
 
             # try:
             #     results[disease]["topas"] = list(
@@ -84,15 +84,15 @@ class Main():
             except Exception as e:
                 print("DOMINO failed:", e)
 
-            try:
-                results[disease]["robust"] = list(
-                    self.ROBUST.run_robust(
-                        G_ppi,
-                        seed_nodes
-                    )
-                )
-            except Exception as e:
-                print("ROBUST failed:", e)
+            # try:
+            #     results[disease]["robust"] = list(
+            #         self.ROBUST.run_robust(
+            #             G_ppi,
+            #             seed_nodes
+            #         )
+            #     )
+            # except Exception as e:
+            #     print("ROBUST failed:", e)
         return results
 
     def save_classical_methods_results(self, results):
@@ -156,15 +156,6 @@ class Main():
             disease,
             seed_nodes=list(disease_pro_mapping[disease])
         )
-
-    def run_gnn(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
-        for disease, all_seeds in tqdm(disease_pro_mapping.items()):
-            print(f"Processing: {disease} ({len(all_seeds)} raw seeds)")
-
-            seed_nodes = [node for node in all_seeds if node in G_ppi]
-            if len(seed_nodes) < MIN_SEEDS:
-                print("Skipped — not enough seeds in PPI")
-                continue
 
     def main(self):
         # Classical Methods
