@@ -1,5 +1,6 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+
 
 class DataCompilation():
     def __init__(self, path, selected_diseases) -> None:
@@ -14,24 +15,21 @@ class DataCompilation():
         df_gen_pro = pd.read_csv(f'{self.path}gen_pro.tsv', sep='\t')
         # Disease - Gen Interaction
         df_dis_gen = pd.read_csv(f'{self.path}dis_gen.tsv', sep='\t')
-        # Gene - Gene interaction, based on PPI
-        
         return df_pro_pro, df_gen_pro, df_dis_gen
 
     def get_gen_gen_PPI(self, df_pro_pro, df_gen_pro) -> pd.DataFrame:
+        genA = df_gen_pro.rename(columns={'protein_id': 'prA', 'gene_id': 'geneA'})
+        genB = df_gen_pro.rename(columns={'protein_id': 'prB', 'gene_id': 'geneB'})
 
-        genA = df_gen_pro.rename(columns={'protein_id':'prA', 'gene_id':'geneA'})
-        genB = df_gen_pro.rename(columns={'protein_id':'prB', 'gene_id':'geneB'})
-        
         merged = (
             df_pro_pro
             .merge(genA, on='prA', how='inner')
             .merge(genB, on='prB', how='inner')
         )
-        
+
         df_gen_gen = merged[['geneA', 'geneB']].drop_duplicates()
         df_gen_gen = df_gen_gen[df_gen_gen['geneA'] != df_gen_gen['geneB']]
-        
+
         df_gen_gen = (
             pd.DataFrame(
                 np.sort(df_gen_gen.values, axis=1),
@@ -39,9 +37,8 @@ class DataCompilation():
             )
             .drop_duplicates()
         )
-        
         return df_gen_gen
-    
+
     def get_dis_pro_data(self, df_dis_gen, df_gen_pro):
         df_dis_pro = df_dis_gen.merge(
             df_gen_pro, how='left', on='gene_id', indicator=True

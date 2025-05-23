@@ -1,11 +1,11 @@
 import pandas as pd
 from tqdm import tqdm
 
-# from classical_methods.diamond_algorithm import DIAMOND
-# from classical_methods.domino_algorithm import DOMINO
-# from classical_methods.lcc_algorithm import LCC
+from classical_methods.diamond_algorithm import DIAMOND
+from classical_methods.domino_algorithm import DOMINO
+from classical_methods.lcc_algorithm import LCC
 from classical_methods.robust_ant import ROBUST
-# from classical_methods.topas_algorithm import TOPAS
+from classical_methods.topas_algorithm import TOPAS
 from data_compilation import DataCompilation
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
@@ -18,11 +18,11 @@ class Main():
         self.DC = DataCompilation(path, self.selected_diseases)
         self.GPPI = GraphPPI()
         self.V = VisualizationModule()
-        # self.LCC = LCC()
-        # self.DIAMOND = DIAMOND()
-        # self.DOMINO = DOMINO()
+        self.LCC = LCC()
+        self.DIAMOND = DIAMOND()
+        self.DOMINO = DOMINO()
         self.ROBUST = ROBUST()
-        # self.TOPAS = TOPAS(expansion_steps=2, cores=4)
+        self.TOPAS = TOPAS(expansion_steps=2, cores=4)
 
     def run_classical_methods(self, G_ppi, disease_pro_mapping, MIN_SEEDS=10):
         results = {}
@@ -41,51 +41,50 @@ class Main():
 
             results[disease] = {}
 
-#             try:
-#                 print("\nRunning LCC...")
-#                 results[disease]["lcc"] = self.LCC.run_lcc_per_disease(
-#                     G_ppi,
-#                     seed_nodes
-#                 )
-#                 print("...done")
-#             except Exception as e:
-#                 print("LCC failed:", e)
+            try:
+                print("\nRunning LCC...")
+                results[disease]["lcc"] = self.LCC.run_lcc_per_disease(
+                    G_ppi,
+                    seed_nodes
+                )
+                print("...done")
+            except Exception as e:
+                print("LCC failed:", e)
 
-#             try:
-#                 print("\nRunning TOPAS...")
-#                 results[disease]["topas"] = self.TOPAS.run(
-#                     "./src/inputs/PPI.txt",
-#                     f"./src/inputs/seed_nodes_{disease}.txt"
-#                 )
-#                 print("...done")
-#             except Exception as e:
-#                 print("TOPAS failed:", e)
+            try:
+                print("\nRunning TOPAS...")
+                results[disease]["topas"] = self.TOPAS.run(
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt"
+                )
+                print("...done")
+            except Exception as e:
+                print("TOPAS failed:", e)
 
-#             try:
-#                 print("\nRunning DIAMOND...")
-#                 results[disease]["diamond"] = self.DIAMOND.run_diamond(
-#                     "./src/inputs/PPI.txt",
-#                     f"./src/inputs/seed_nodes_{disease}.txt",
-#                     200
-#                 )
-#                 print("...done")
-#             except Exception as e:
-#                 print("DIAMOnD failed:", e)
+            try:
+                print("\nRunning DIAMOND...")
+                results[disease]["diamond"] = self.DIAMOND.run_diamond(
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt",
+                    200
+                )
+                print("...done")
+            except Exception as e:
+                print("DIAMOnD failed:", e)
 
-#             try:
-#                 print("\nRunning DOMINO...")
-#                 results[disease]["domino"] = self.DOMINO.run_domino(
-#                     "./src/inputs/PPI.txt",
-#                     f"./src/inputs/seed_nodes_{disease}.txt"
-#                 )
-#                 print("...done")
-#             except Exception as e:
-#                 print("DOMINO failed:", e)
+            try:
+                print("\nRunning DOMINO...")
+                results[disease]["domino"] = self.DOMINO.run_domino(
+                    "./src/inputs/PPI.txt",
+                    f"./src/inputs/seed_nodes_{disease}.txt"
+                )
+                print("...done")
+            except Exception as e:
+                print("DOMINO failed:", e)
 
             try:
                 print("\nRunning ROBUST...")
-                
-                out_csv  = f"./src/outputs/robust_{disease}.csv"
+                out_csv = f"./src/outputs/robust_{disease}.csv"
                 results[disease]["robust"] = self.ROBUST.run_robust(
                     self.df_gen_gen,
                     seed_nodes,
