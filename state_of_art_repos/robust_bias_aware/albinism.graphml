@@ -1,0 +1,1241 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="connected_components_id" attr.type="long" for="node" id="d4" />
+  <key attr.name="trees" attr.type="string" for="node" id="d3" />
+  <key attr.name="nrOfOccurrences" attr.type="long" for="node" id="d2" />
+  <key attr.name="significance" attr.type="double" for="node" id="d1" />
+  <key attr.name="isSeed" attr.type="boolean" for="node" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="P17643">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9HCE0">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8IY67">
+      <data key="d0">False</data>
+      <data key="d1">0.5666666666666667</data>
+      <data key="d2">17</data>
+      <data key="d3">0,2,3,5,6,8,10,12,14,16,18,19,21,23,25,27,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UF02">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">0,5,9,12,15,19,22,25,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NP79">
+      <data key="d0">False</data>
+      <data key="d1">0.7666666666666667</data>
+      <data key="d2">23</data>
+      <data key="d3">0,1,2,3,4,5,6,8,10,11,13,14,15,16,17,19,20,21,23,25,26,27,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P30566">
+      <data key="d0">False</data>
+      <data key="d1">0.5666666666666667</data>
+      <data key="d2">17</data>
+      <data key="d3">0,1,2,3,4,5,6,9,11,13,16,18,21,23,25,27,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P51810">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q99698">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q13428">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O75147">
+      <data key="d0">False</data>
+      <data key="d1">0.4</data>
+      <data key="d2">12</data>
+      <data key="d3">0,2,5,6,9,11,13,15,17,20,25,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="PDDC1">
+      <data key="d0">False</data>
+      <data key="d1">0.5</data>
+      <data key="d2">15</data>
+      <data key="d3">0,3,5,7,9,11,13,15,17,19,21,23,25,27,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UL45">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="PARK2">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">0,5,9,16,23,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P58107">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">0,5,9,15,20,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="CBWD1">
+      <data key="d0">False</data>
+      <data key="d1">0.36666666666666664</data>
+      <data key="d2">11</data>
+      <data key="d3">0,4,6,8,11,14,17,18,23,25,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P40126">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UPZ3">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O75051">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q5TC82">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="FGFR1OP">
+      <data key="d0">False</data>
+      <data key="d1">0.5666666666666667</data>
+      <data key="d2">17</data>
+      <data key="d3">0,1,2,3,4,5,6,9,11,13,16,18,21,23,25,27,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P63000">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O00203">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="PTRF">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q86XL3">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q86YV9">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8TDS5">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NQ11">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8N543">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P04637">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P24530">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8IWV7">
+      <data key="d0">False</data>
+      <data key="d1">0.3333333333333333</data>
+      <data key="d2">10</data>
+      <data key="d3">0,3,6,10,12,16,19,22,25,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UBY5">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q68D91">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P54219">
+      <data key="d0">False</data>
+      <data key="d1">0.8</data>
+      <data key="d2">24</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,13,14,16,17,18,19,21,22,23,26,27,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q96I99">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9ULV1">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="FAM208A">
+      <data key="d0">False</data>
+      <data key="d1">0.7333333333333333</data>
+      <data key="d2">22</data>
+      <data key="d3">0,1,2,3,4,5,6,8,10,11,13,14,16,18,19,20,21,23,24,25,26,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P51159">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q08830">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O75030">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="MLLT4">
+      <data key="d0">False</data>
+      <data key="d1">0.8333333333333334</data>
+      <data key="d2">25</data>
+      <data key="d3">0,1,2,3,4,5,6,7,9,10,13,14,15,16,17,18,19,20,22,23,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="NOV">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9ULT6">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9H0W5">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">0,7,20</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P38606">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">0,10,22</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NQG7">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92902">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="KIAA0368">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">0,5,7,9,16,19,22,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P05067">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P22304">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92572">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">0,8,11,13,17,21,25,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P52594">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q6QNY0">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q96EV8">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="SSSCA1">
+      <data key="d0">False</data>
+      <data key="d1">0.8</data>
+      <data key="d2">24</data>
+      <data key="d3">0,1,2,3,4,5,6,8,10,11,13,14,16,17,18,19,20,21,23,24,25,26,27,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9Y3C4">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">0,3,7,13,19,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P32121">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P01308">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9Y4I1">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">0,4,7,11,13,18,20,26,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q04671">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="CARKD">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">0,7,12,16,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UMR5">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">0,7,12,16,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q96T91">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">0,6,11,18,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P78332">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NZ71">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8NFW8">
+      <data key="d0">False</data>
+      <data key="d1">0.5666666666666667</data>
+      <data key="d2">17</data>
+      <data key="d3">0,1,4,6,7,9,11,13,15,17,19,20,22,24,26,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O14617">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q01726">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9BXB1">
+      <data key="d0">False</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P04155">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P26367">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q969F9">
+      <data key="d0">True</data>
+      <data key="d1">1.0</data>
+      <data key="d2">30</data>
+      <data key="d3">0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UJK0">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">0,5,9,12,15,19,22,25,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9Y6M0">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">1,4,7,10,12,16,19,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="DGCR14">
+      <data key="d0">False</data>
+      <data key="d1">0.5666666666666667</data>
+      <data key="d2">17</data>
+      <data key="d3">1,3,4,5,7,9,11,13,15,17,18,20,22,23,24,26,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P30550">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">1,4,6,10,14,17,20,24,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UKB3">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">1,17,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9Y5Q6">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">1,3,7,9,12,15,19,21,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P34947">
+      <data key="d0">False</data>
+      <data key="d1">0.9666666666666667</data>
+      <data key="d2">29</data>
+      <data key="d3">1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q93052">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">1,4,6,9,12,16,18,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q3ZCM7">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">1,8,13,17,23,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q6ZNC8">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">1,4,7,10,12,16,19,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8WWY8">
+      <data key="d0">False</data>
+      <data key="d1">0.36666666666666664</data>
+      <data key="d2">11</data>
+      <data key="d3">1,3,5,9,12,14,17,20,21,24,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92626">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">1,7,11,17,19,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q6P996">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">1,3,6,10,14,18,21,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P34059">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">1,11,15,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q86TI2">
+      <data key="d0">False</data>
+      <data key="d1">0.3333333333333333</data>
+      <data key="d2">10</data>
+      <data key="d3">1,4,6,9,12,16,18,21,24,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q15768">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">1,8,13,17,23,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P51649">
+      <data key="d0">False</data>
+      <data key="d1">0.4</data>
+      <data key="d2">12</data>
+      <data key="d3">1,3,5,7,9,12,15,18,20,23,27,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O60383">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">1,8,10,17,19,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NRR3">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">1,12,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O14498">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">1,4,10,11,15,18,25,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P49746">
+      <data key="d0">False</data>
+      <data key="d1">0.5333333333333333</data>
+      <data key="d2">16</data>
+      <data key="d3">1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P84085">
+      <data key="d0">False</data>
+      <data key="d1">0.5</data>
+      <data key="d2">15</data>
+      <data key="d3">1,3,5,7,9,11,12,15,18,20,22,23,25,27,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="C17orf59">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">2,9,15,22,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P61221">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,8,11,13,20,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q32P28">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,5,11,17,22,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="TAZ">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">2,5,10,13,16,20,24,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92838">
+      <data key="d0">False</data>
+      <data key="d1">0.5</data>
+      <data key="d2">15</data>
+      <data key="d3">2,4,5,6,8,10,11,14,16,17,19,22,24,26,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="KIAA1377">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">2,5,9,14,15,21,22,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q07001">
+      <data key="d0">False</data>
+      <data key="d1">0.36666666666666664</data>
+      <data key="d2">11</data>
+      <data key="d3">2,4,6,8,10,14,16,19,22,24,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9H8J5">
+      <data key="d0">False</data>
+      <data key="d1">0.36666666666666664</data>
+      <data key="d2">11</data>
+      <data key="d3">2,3,7,8,11,13,16,18,21,23,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O43567">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,8,13,18,21,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="VWA9">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,8,10,17,20,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="FAM96B">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,5,11,14,21,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q6NUM6">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">2,4,8,11,13,17,23,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q14789">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">2,9,15,22,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9P258">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,8,10,17,20,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NWH9">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">2,6,11,13,17,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9BV94">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">2,5,10,13,16,20,24,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="C14orf1">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">3,16,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9BX70">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">3,6,12,16,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q8N8S7">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">3,7,15,21</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="SEPT9">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">3,9,19,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q02818">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">3,7,11,16,23,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="SEPT7">
+      <data key="d0">False</data>
+      <data key="d1">0.3</data>
+      <data key="d2">9</data>
+      <data key="d3">3,7,9,11,15,19,21,24,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9BQG0">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">3,18,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q05707">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">3,9,12,15,21,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NP58">
+      <data key="d0">False</data>
+      <data key="d1">0.26666666666666666</data>
+      <data key="d2">8</data>
+      <data key="d3">4,6,10,14,17,20,24,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O43491">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">4,8,13,18,20,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P53597">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">4,7,12,16,21,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q86VI3">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">4,14,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q5JTZ9">
+      <data key="d0">False</data>
+      <data key="d1">0.2</data>
+      <data key="d2">6</data>
+      <data key="d3">4,7,12,16,21,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P42261">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">4,13,18,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q5T4B2">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">4,10,18,25</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92187">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">4,8,14,17,23</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="YAE1D1">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">5,14,21</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q92665">
+      <data key="d0">False</data>
+      <data key="d1">0.23333333333333334</data>
+      <data key="d2">7</data>
+      <data key="d3">5,9,12,16,18,23,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q15072">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">6,14,23</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9UPQ3">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">6,18,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q5RL73">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">6,12,23</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q08J23">
+      <data key="d0">False</data>
+      <data key="d1">0.16666666666666666</data>
+      <data key="d2">5</data>
+      <data key="d3">7,12,15,20,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O43896">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">7,15,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="KIAA1279">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">7,15,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P23142">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">7,15,19</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9NSC2">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">7,12,15,22</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9P0K8">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">7,15,22</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="C11orf30">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">7,15,22,29</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="P62701">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">8,14,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q9BTV5">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">8,15,21,26</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q6PKC3">
+      <data key="d0">False</data>
+      <data key="d1">0.13333333333333333</data>
+      <data key="d2">4</data>
+      <data key="d3">8,11,15,24</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O94952">
+      <data key="d0">False</data>
+      <data key="d1">0.3333333333333333</data>
+      <data key="d2">10</data>
+      <data key="d3">8,10,12,14,17,20,22,24,26,28</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O14975">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">9,17,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="Q13296">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">9,17,27</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="O75312">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">10,14,23</data>
+      <data key="d4">0</data>
+    </node>
+    <node id="DLEU1">
+      <data key="d0">False</data>
+      <data key="d1">0.1</data>
+      <data key="d2">3</data>
+      <data key="d3">10,19,28</data>
+      <data key="d4">0</data>
+    </node>
+    <edge source="P17643" target="Q5TC82" />
+    <edge source="Q9HCE0" target="P04637" />
+    <edge source="Q8IY67" target="Q08830" />
+    <edge source="Q8IY67" target="P04637" />
+    <edge source="Q8IY67" target="Q5TC82" />
+    <edge source="Q9UF02" target="Q68D91" />
+    <edge source="Q9UF02" target="Q9UJK0" />
+    <edge source="Q9NP79" target="Q99698" />
+    <edge source="Q9NP79" target="SSSCA1" />
+    <edge source="Q9NP79" target="Q9BTV5" />
+    <edge source="P30566" target="FGFR1OP" />
+    <edge source="P30566" target="NOV" />
+    <edge source="P51810" target="Q96I99" />
+    <edge source="Q99698" target="DGCR14" />
+    <edge source="Q99698" target="Q92665" />
+    <edge source="Q99698" target="O43896" />
+    <edge source="Q13428" target="Q9BXB1" />
+    <edge source="Q13428" target="P32121" />
+    <edge source="Q13428" target="P34947" />
+    <edge source="O75147" target="P58107" />
+    <edge source="O75147" target="PTRF" />
+    <edge source="O75147" target="Q9NWH9" />
+    <edge source="PDDC1" target="Q9UPZ3" />
+    <edge source="PDDC1" target="Q9NZ71" />
+    <edge source="PDDC1" target="Q9Y3C4" />
+    <edge source="Q9UL45" target="Q6QNY0" />
+    <edge source="Q9UL45" target="P05067" />
+    <edge source="Q9UL45" target="Q96EV8" />
+    <edge source="PARK2" target="MLLT4" />
+    <edge source="PARK2" target="P63000" />
+    <edge source="PARK2" target="Q92665" />
+    <edge source="P58107" target="Q08830" />
+    <edge source="P58107" target="Q9H0W5" />
+    <edge source="CBWD1" target="Q9NZ71" />
+    <edge source="CBWD1" target="Q96T91" />
+    <edge source="CBWD1" target="Q92187" />
+    <edge source="CBWD1" target="Q86VI3" />
+    <edge source="CBWD1" target="Q15072" />
+    <edge source="CBWD1" target="Q9UPQ3" />
+    <edge source="P40126" target="Q9BXB1" />
+    <edge source="P40126" target="Q86TI2" />
+    <edge source="P40126" target="Q9BV94" />
+    <edge source="P40126" target="Q9NP58" />
+    <edge source="P40126" target="Q6PKC3" />
+    <edge source="Q9UPZ3" target="Q86YV9" />
+    <edge source="Q9UPZ3" target="FGFR1OP" />
+    <edge source="O75051" target="Q96T91" />
+    <edge source="O75051" target="Q9Y5Q6" />
+    <edge source="O75051" target="TAZ" />
+    <edge source="O75051" target="Q92187" />
+    <edge source="Q5TC82" target="Q8NFW8" />
+    <edge source="P63000" target="Q9NQG7" />
+    <edge source="P63000" target="Q9NRR3" />
+    <edge source="P63000" target="Q9P258" />
+    <edge source="P63000" target="Q8N8S7" />
+    <edge source="P63000" target="Q86VI3" />
+    <edge source="P63000" target="Q9UPQ3" />
+    <edge source="O00203" target="O14617" />
+    <edge source="O00203" target="P84085" />
+    <edge source="O00203" target="Q92838" />
+    <edge source="O00203" target="P34947" />
+    <edge source="O00203" target="SEPT7" />
+    <edge source="O00203" target="Q96EV8" />
+    <edge source="O00203" target="O43491" />
+    <edge source="O00203" target="Q92572" />
+    <edge source="O00203" target="P32121" />
+    <edge source="PTRF" target="P04155" />
+    <edge source="PTRF" target="Q6ZNC8" />
+    <edge source="PTRF" target="Q9BQG0" />
+    <edge source="PTRF" target="P62701" />
+    <edge source="Q86XL3" target="Q9NZ71" />
+    <edge source="Q86XL3" target="Q08830" />
+    <edge source="Q86YV9" target="Q969F9" />
+    <edge source="Q8TDS5" target="P32121" />
+    <edge source="Q9NQ11" target="Q04671" />
+    <edge source="Q9NQ11" target="Q9NZ71" />
+    <edge source="Q8N543" target="Q08830" />
+    <edge source="Q8N543" target="Q01726" />
+    <edge source="P04637" target="DGCR14" />
+    <edge source="P24530" target="KIAA0368" />
+    <edge source="P24530" target="Q6P996" />
+    <edge source="P24530" target="Q6NUM6" />
+    <edge source="Q8IWV7" target="Q08830" />
+    <edge source="Q8IWV7" target="P38606" />
+    <edge source="Q8IWV7" target="Q9BX70" />
+    <edge source="Q8IWV7" target="DLEU1" />
+    <edge source="Q9UBY5" target="P05067" />
+    <edge source="Q68D91" target="Q6QNY0" />
+    <edge source="Q68D91" target="P30550" />
+    <edge source="Q68D91" target="Q9H8J5" />
+    <edge source="P54219" target="Q9NZ71" />
+    <edge source="P54219" target="KIAA0368" />
+    <edge source="P54219" target="Q6P996" />
+    <edge source="P54219" target="Q6NUM6" />
+    <edge source="Q96I99" target="P38606" />
+    <edge source="Q96I99" target="Q9UKB3" />
+    <edge source="Q96I99" target="P61221" />
+    <edge source="Q96I99" target="SEPT9" />
+    <edge source="Q96I99" target="P53597" />
+    <edge source="Q96I99" target="Q15072" />
+    <edge source="Q9ULV1" target="Q9ULT6" />
+    <edge source="FAM208A" target="SSSCA1" />
+    <edge source="FAM208A" target="Q92902" />
+    <edge source="P51159" target="Q9Y4I1" />
+    <edge source="P51159" target="P05067" />
+    <edge source="P51159" target="O60383" />
+    <edge source="P51159" target="KIAA1377" />
+    <edge source="P51159" target="C14orf1" />
+    <edge source="P51159" target="Q5RL73" />
+    <edge source="Q08830" target="Q9UJK0" />
+    <edge source="Q08830" target="MLLT4" />
+    <edge source="Q08830" target="P78332" />
+    <edge source="Q08830" target="CARKD" />
+    <edge source="Q08830" target="Q8NFW8" />
+    <edge source="Q08830" target="Q92626" />
+    <edge source="Q08830" target="P51649" />
+    <edge source="Q08830" target="C17orf59" />
+    <edge source="Q08830" target="Q9NWH9" />
+    <edge source="Q08830" target="Q02818" />
+    <edge source="Q08830" target="Q05707" />
+    <edge source="Q08830" target="Q5JTZ9" />
+    <edge source="Q08830" target="Q08J23" />
+    <edge source="O75030" target="P78332" />
+    <edge source="O75030" target="P26367" />
+    <edge source="O75030" target="P05067" />
+    <edge source="MLLT4" target="Q9BXB1" />
+    <edge source="NOV" target="P01308" />
+    <edge source="NOV" target="P23142" />
+    <edge source="NOV" target="O94952" />
+    <edge source="Q9ULT6" target="Q9BXB1" />
+    <edge source="Q9H0W5" target="Q9Y4I1" />
+    <edge source="Q9H0W5" target="Q08J23" />
+    <edge source="Q92902" target="Q9NSC2" />
+    <edge source="Q92902" target="O14975" />
+    <edge source="P05067" target="P52594" />
+    <edge source="P05067" target="P01308" />
+    <edge source="P22304" target="Q9UMR5" />
+    <edge source="P22304" target="P34059" />
+    <edge source="P22304" target="Q5T4B2" />
+    <edge source="P22304" target="Q3ZCM7" />
+    <edge source="P22304" target="O94952" />
+    <edge source="Q92572" target="O14617" />
+    <edge source="Q92572" target="SSSCA1" />
+    <edge source="P52594" target="Q9Y3C4" />
+    <edge source="P52594" target="Q93052" />
+    <edge source="P52594" target="Q32P28" />
+    <edge source="P52594" target="Q9BTV5" />
+    <edge source="P52594" target="O75312" />
+    <edge source="Q6QNY0" target="Q96EV8" />
+    <edge source="Q96EV8" target="O14617" />
+    <edge source="SSSCA1" target="Q9NZ71" />
+    <edge source="SSSCA1" target="P62701" />
+    <edge source="SSSCA1" target="O75312" />
+    <edge source="P32121" target="O14617" />
+    <edge source="Q9Y4I1" target="P42261" />
+    <edge source="Q04671" target="Q07001" />
+    <edge source="CARKD" target="Q9UMR5" />
+    <edge source="Q9NZ71" target="Q9Y6M0" />
+    <edge source="Q9NZ71" target="Q8WWY8" />
+    <edge source="Q9NZ71" target="Q15768" />
+    <edge source="Q9NZ71" target="P49746" />
+    <edge source="Q9NZ71" target="O14498" />
+    <edge source="Q9NZ71" target="VWA9" />
+    <edge source="Q9NZ71" target="FAM96B" />
+    <edge source="Q9NZ71" target="C11orf30" />
+    <edge source="O14617" target="P34947" />
+    <edge source="O14617" target="O43567" />
+    <edge source="Q969F9" target="P49746" />
+    <edge source="Q9Y6M0" target="Q6ZNC8" />
+    <edge source="P30550" target="P84085" />
+    <edge source="P30550" target="Q9NP58" />
+    <edge source="Q9UKB3" target="Q8WWY8" />
+    <edge source="Q9Y5Q6" target="Q92626" />
+    <edge source="Q9Y5Q6" target="Q05707" />
+    <edge source="Q9Y5Q6" target="VWA9" />
+    <edge source="P34947" target="Q9BQG0" />
+    <edge source="Q93052" target="Q86TI2" />
+    <edge source="Q3ZCM7" target="Q15768" />
+    <edge source="Q3ZCM7" target="O60383" />
+    <edge source="Q8WWY8" target="Q9NRR3" />
+    <edge source="Q92626" target="Q13296" />
+    <edge source="P34059" target="O14498" />
+    <edge source="P51649" target="P84085" />
+    <edge source="O60383" target="DLEU1" />
+    <edge source="O14498" target="Q5T4B2" />
+    <edge source="C17orf59" target="Q14789" />
+    <edge source="P61221" target="FAM96B" />
+    <edge source="P61221" target="O43491" />
+    <edge source="Q32P28" target="Q92838" />
+    <edge source="TAZ" target="Q9BV94" />
+    <edge source="Q92838" target="Q07001" />
+    <edge source="KIAA1377" target="Q14789" />
+    <edge source="KIAA1377" target="YAE1D1" />
+    <edge source="Q9H8J5" target="O43567" />
+    <edge source="Q9H8J5" target="Q02818" />
+    <edge source="VWA9" target="Q9P258" />
+    <edge source="FAM96B" target="YAE1D1" />
+    <edge source="C14orf1" target="Q9BX70" />
+    <edge source="Q9BX70" target="Q5RL73" />
+    <edge source="Q8N8S7" target="SEPT7" />
+    <edge source="SEPT9" target="SEPT7" />
+    <edge source="Q05707" target="Q13296" />
+    <edge source="O43491" target="P42261" />
+    <edge source="P53597" target="Q5JTZ9" />
+    <edge source="Q08J23" target="KIAA1279" />
+    <edge source="O43896" target="KIAA1279" />
+    <edge source="Q9NSC2" target="Q9P0K8" />
+    <edge source="Q9P0K8" target="C11orf30" />
+    <edge source="O14975" target="Q13296" />
+  </graph>
+</graphml>
