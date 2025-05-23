@@ -10,8 +10,6 @@ from data_compilation import DataCompilation
 from graph_creation import GraphPPI
 from visualization import VisualizationModule
 
-#Hola
-
 
 class Main():
     def __init__(self, path):
