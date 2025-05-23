@@ -1,7 +1,8 @@
 import os
+import subprocess
 import sys
 import tempfile
-import subprocess
+
 
 class ROBUST:
     def __init__(self,
@@ -24,7 +25,7 @@ class ROBUST:
         seed_nodes : list de ENTREZ IDs (strings)
         out_csv    : path to save the .csv output
         """
-        
+
         # Creation of temporary files for df_gen_gen and the seed genes
         with tempfile.NamedTemporaryFile('w', suffix='.tsv', delete=False) as tmp_ppi:
             df_gen_gen.to_csv(tmp_ppi.name, sep='\t', index=False, header=False)
@@ -34,11 +35,11 @@ class ROBUST:
             for s in seed_nodes:
                 tmp_seeds.write(f"{s}\n")
             seeds_path = tmp_seeds.name
-        
+
         # Creation of the ROBUST command
         cmd = [
-            sys.executable, os.path.abspath(self.robust_script), 'robust',
-            seeds_path, 'module.graphml',
+            sys.executable, os.path.abspath(self.robust_script),
+            seeds_path, out_csv,  # los dos argumentos posicionales requeridos
             '--network',    ppi_path,
             '--namespace',  self.namespace,
             '--alpha',      str(self.alpha),
@@ -46,8 +47,7 @@ class ROBUST:
             '--n',          str(self.n),
             '--tau',        str(self.tau),
             '--study-bias-scores', self.study_bias_scores,
-            '--gamma',      str(self.gamma),
-            '--verbose'
+            '--gamma',      str(self.gamma)
         ]
         subprocess.run(cmd, check=True)
 

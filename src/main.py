@@ -85,7 +85,7 @@ class Main():
             try:
                 print("\nRunning ROBUST...")
                 out_csv = f"./src/outputs/robust_{disease}.csv"
-                results[disease]["robust"] = self.ROBUST.run_robust(
+                results_robust = self.ROBUST.run_robust(
                     self.df_gen_gen,
                     seed_nodes,
                     out_csv
