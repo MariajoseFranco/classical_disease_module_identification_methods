@@ -31,6 +31,33 @@ class LCC():
         result['seed_nodes_module_1'] = list(nodes)
         return result
 
+    def run_lcc_topas_style(self, G: nx.Graph, seed_nodes: set) -> nx.Graph:
+        """
+        Extracts the connected component of G that contains the largest number of seed nodes.
+
+        Args:
+            G: full graph
+            seed_nodes: set of seed nodes
+
+        Returns:
+            Subgraph corresponding to the component with the most seed nodes.
+        """
+        if len(G) == 0:
+            return G
+
+        components = nx.connected_components(G)
+        best_component = set()
+        max_seed_count = 0
+
+        for comp in components:
+            comp = set(comp)
+            seed_count = len(seed_nodes & comp)
+            if seed_count > max_seed_count:
+                max_seed_count = seed_count
+                best_component = comp
+
+        return G.subgraph(best_component).copy()
+
     def run_lcc(self, G: nx.Graph) -> nx.Graph:
         if len(G) == 0:
             return G
